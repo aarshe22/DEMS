@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/runtime:2.2.3-bionic AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0.3-bionic AS runtime
 
 RUN    apt-get -yqq update && \
        apt-get install -yq --no-install-recommends \
@@ -9,5 +9,5 @@ RUN    apt-get -yqq update && \
        rm -rf /var/lib/apt/lists
 
 WORKDIR /app
-COPY --from=documents:localbuild /app/src/Documents.Queues.Tasks.TextExtract/bin/Release/netcoreapp2.0/publish/ /app
+COPY --from=documents:localbuild /app/src/Documents.Queues.Tasks.TextExtract/bin/Release/net8.0/publish/ /app
 ENTRYPOINT ["dotnet", "Documents.Queues.Tasks.TextExtract.dll"]

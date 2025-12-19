@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>Documents.Backends.Drivers.FileSystem</AssemblyName>
     <PackageId>Documents.Backends.Drivers.FileSystem</PackageId>
     <RootNamespace>Documents.Backends.Drivers.FileSystem</RootNamespace>
@@ -11,6 +11,6 @@
     <ProjectReference Include="..\Documents.Backends.Drivers\Documents.Backends.Drivers.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 </Project>

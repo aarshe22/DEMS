@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <StartupObject>Documents.Clients.Tools.Program</StartupObject>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
@@ -16,7 +16,7 @@
     <None Remove="Configuration\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ConsoleTableExt" Version="2.0.1" />
+    <PackageReference Include="ConsoleTableExt" Version="8.0.0" />
     <PackageReference Include="morelinq" Version="2.10.0" />
     <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="2.2.4" />
   </ItemGroup>

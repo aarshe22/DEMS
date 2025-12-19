@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/runtime:2.2 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
-COPY --from=documents:localbuild /app/src/Documents.Queues.Tasks.Notify/bin/Release/netcoreapp2.0/publish/ /app
+COPY --from=documents:localbuild /app/src/Documents.Queues.Tasks.Notify/bin/Release/net8.0/publish/ /app
 ENTRYPOINT ["dotnet", "Documents.Queues.Tasks.Notify.dll"]

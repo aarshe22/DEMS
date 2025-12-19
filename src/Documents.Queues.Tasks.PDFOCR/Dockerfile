@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/runtime:2.2-bionic AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-bionic AS runtime
 RUN \
   apt-get update && apt-get -y install software-properties-common
 
@@ -31,7 +31,7 @@ RUN \
   pip3 install --user ocrmypdf
 
 WORKDIR /app
-COPY --from=documents:localbuild /app/src/Documents.Queues.Tasks.PDFOCR/bin/Release/netcoreapp2.0/publish/ /app
+COPY --from=documents:localbuild /app/src/Documents.Queues.Tasks.PDFOCR/bin/Release/net8.0/publish/ /app
 RUN chmod +x /app/pdfocr.rb
 
 ENTRYPOINT ["dotnet", "Documents.Queues.Tasks.PDFOCR.dll"]
