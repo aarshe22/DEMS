@@ -3,12 +3,14 @@ version: '3'
 services:
   elasticsearch:
     restart: always
-    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.6.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
     environment:
       - discovery.type=single-node
       - cluster.name=docker-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+      - xpack.security.enrollment.enabled=false
     ulimits:
       memlock:
         soft: -1
@@ -23,7 +25,7 @@ services:
 #    ports:
 #      - "5601:5601"
   mssql-server-linux:
-    image: microsoft/mssql-server-linux:latest
+    image: mcr.microsoft.com/mssql/server:2022-latest
     volumes:
       - ../services/data/mssql:/var/opt/mssql/data
     environment:
@@ -32,7 +34,7 @@ services:
     ports:
       - "1433:1433"
   rabbitmq:
-    image: rabbitmq:3.7.4-management-alpine
+    image: rabbitmq:3.13-management-alpine
     expose:
       - "5672"
       - "15672"

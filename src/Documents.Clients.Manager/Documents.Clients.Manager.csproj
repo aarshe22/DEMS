@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>Documents.Clients.Manager</AssemblyName>
     <OutputType>Exe</OutputType>
     <DefaultItemExcludes>$(DefaultItemExcludes);UI\node_modules\**</DefaultItemExcludes>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Documents.API.Client\Documents.API.Client.csproj" />
@@ -14,13 +16,13 @@
     <ProjectReference Include="..\Documents.Common.WebHost\Documents.Common.WebHost.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="BCrypt.Net-Core" Version="1.4.0" />
-    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.1" />
-    <PackageReference Include="NSwag.AspNetCore" Version="11.12.9" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.1.4" />
-    <PackageReference Include="TimeZoneConverter" Version="2.3.1" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="8.0.0" />
+    <PackageReference Include="NSwag.AspNetCore" Version="14.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.0" />
+    <PackageReference Include="TimeZoneConverter" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="UI\**" />
